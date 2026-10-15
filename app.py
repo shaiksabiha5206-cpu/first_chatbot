@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GEMINI_API_LEY"))
 st.title("SABIHA AI CHATBOT")
+st.sidebar.metric ("TOTAL MESSAGES",len(st.session_state.messages))
 file = st.file_uploader("uploaded pdf",type=["pdf"])
 if file:
     st.write("FILE UPLOAD",file.name)
